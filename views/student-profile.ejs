@@ -1,0 +1,53 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  <%- include("./partials/nav.ejs") %>
+  <div class="blogs content">
+    <h2>create student profile</h2>
+
+    <div class="create-blog content">
+      <form action="" method="POST">
+
+        <label for="id">ID</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="name">Name</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="department">Department</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="program">Program</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="g-suite">G-suite</label>
+        <input type="email" id="title" name="title" required>
+
+        <label for="a-credit">Attempted Credit</label>
+        <input type="number" id="title" name="title" required>
+
+        <label for="e-credit">Earned Credit</label>
+        <input type="number" id="title" name="title" required>
+
+        <label for="a-semester">Attempted semester</label>
+        <input type="number" id="title" name="title" required>
+
+        <label for="cgpa">Current CGPA</label>
+        <input type="number" id="title" name="title" required>
+
+        <label for="body">Bio</label>
+        <textarea id="body" name="body" required></textarea>
+
+        <button>Submit</button>
+
+      </form>
+    </div>
+  
+
+
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
+</body>
+</html>

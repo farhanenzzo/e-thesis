@@ -1,0 +1,63 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  <%- include("./partials/nav.ejs") %>
+  <div class="blogs content">
+    <h2>Form Thesis Group</h2>
+
+    <div class="create-blog content">
+      <form>
+
+        <label for="id">Student Id (1)</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="id">Student Id (2)</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="id">Student Id (3)</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="id">Student Id (4)</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="id">Student Id (5)</label>
+        <input type="text" id="title" name="title" required>
+
+
+        <label for="g-suite">G-suite</label>
+        <input type="email" id="title" name="title" required>
+
+        <label for="f-name">Faculty Initial (Full Name)</label>
+        <select id="" name="">
+            <option value="">Faisal Bin Ashraf</option>
+            <option value="">Salman Sayeed Khan</option>
+            <option value="">Avijit Biswas</option>
+            <option value="">Shoyli Roy</option>
+            <option value="">DZK</option>
+            <option value="">Annajiat rasel</option>
+          </select>
+
+        <label for="topic">choose Topic</label>
+        
+        <select id="" name="">
+            <option value="nlp">nlp</option>
+            <option value="ml">ml</option>
+            <option value="ai">ai</option>
+            <option value="block chain">block chain</option>
+          </select>
+
+          <label for="body">Request Note</label>
+          <textarea id="body" name="body" required></textarea>
+  
+
+        <button>Submit</button>
+
+      </form>
+
+
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
+</body>
+</html>
