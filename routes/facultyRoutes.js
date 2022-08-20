@@ -41,6 +41,21 @@ router.get('/facultyList', (req, res) => {
 
 
 
+router.get('/facultyDetails/:initial_name', (req, res) => {
+
+    const initial_name = req.params.initial_name;
+    const query = 'select * from faculty where initial_name = ?';
+
+    db.query(query, [initial_name], (err, rows) => {
+        if(err) throw err;
+
+        res.render('facultyDetails', {faculty: rows[0], title: 'facultyDetails'});
+    });
+});
+
+
+
+
 
 
 module.exports = router;
