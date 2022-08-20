@@ -22,8 +22,7 @@ const db = mysql.createConnection({
 
 app.get('/', (req, res) => {
 
-  const blogs = [];
-  res.render('index', { title: 'Home', blogs });
+  res.render('index', { title: 'Home' });
 });
 
 app.get('/register', (req, res) => {
