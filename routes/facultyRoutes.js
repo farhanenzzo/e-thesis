@@ -53,6 +53,19 @@ router.get('/facultyDetails/:initial_name', (req, res) => {
     });
 });
 
+router.get('/updatefaculty/:initial_name', (req, res) =>{
+
+    const initial_name = req.params.initial_name;
+    const query = `select * from faculty where initial_name = ?`;
+  
+    db.query(query, [initial_name], (err, rows) => {
+      if(err) throw err;
+  
+      res.render('updateFaculty', {title:'updateFaculty', action:'edit', faculty: rows[0]});
+    });
+  
+});
+  
 
 
 
