@@ -1,0 +1,41 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  <%- include("./partials/nav.ejs") %>
+
+  <div class="text-center">
+    <h2 style="font-family: 'Ubuntu Mono', monospace;">- Student List -</h2>
+
+    <% if (students.length > 0) { %>
+        <table class="table table-sm table-success table-striped table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">G-suite</th>
+                <th scope="col"> Action</th>
+              </tr>
+            </thead>
+            <tbody>
+   
+        <% students.forEach(student => { %>
+            <tr>
+                <td><%= student.id %></td>
+                <td><%= student.name %></td>
+                <td><%= student.gsuite %></td>
+                <td><a href="/studentDetails/<%= student.id %>">Details</a></td>
+            </tr>
+      <% }) %>
+        </tbody>
+        </table>
+
+    <% } else { %>
+      <p>There are no studenList to display...</p>
+    <% } %>
+    
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
+</body>
+</html>

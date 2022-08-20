@@ -1,0 +1,74 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  <%- include("./partials/nav.ejs") %>
+
+
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+   
+      </div>
+      <div class="col-8">
+
+        <h2 style="font-family: 'Ubuntu Mono', monospace;">- Student details -</h2>
+
+        <div class="alert alert-success" role="alert">
+          <h4 class="alert-heading">" Hi, <%= student.name %> !! "</h4>
+          <p>
+
+            <p class="card-text">ID: <P style="color: #145a32 ;"><%= student.id %></P></p>
+            <p class="card-text">Name: <%= student.name %></p>
+            <p class="card-text">Department: <%= student.department %></p>
+            <p class="card-text">G-suite: <%= student.gsuite %></p>
+            <p class="card-text">Attempted Credit: <%= student.attempted_credit %></p>
+            <p class="card-text">Earned Credit: <%= student.earned_credit %></p>
+            <p class="card-text">Attempted semester: <%= student.completed_semester %></p>
+            <p class="card-text">Current CGPA: <%= student.current_cgpa %></p>
+
+          </p>
+          <hr>
+          <p class="mb-0">
+
+
+            <div class="d-grid gap-4">
+                
+              <a href="/updateStudent/<%= student.id %>" class="btn btn-outline-success btn-sm">Edit</a>
+              <!-- <a href="" class="btn btn-outline-success btn-sm delete" data-doc="<%= student.id %>">Delete</a> -->
+
+
+            </div>
+            
+          </p>
+        </div>
+
+      </div>
+      <div class="col">
+
+      </div>
+    </div>
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
+
+
+<!-- for delete data with ajax  -->
+
+<!-- 
+  <script>
+
+    const trashcan = document.querySelector("a.delete");
+
+    trashcan.addEventListener('click', (e) =>{
+      const endpoint =`/studentList/${trashcan.dataset.doc}`;
+      fetch(endpoint, {
+        method: 'Delete'
+      })
+      .then((response) => {response.json()})
+      .then((data) => console.log(data))
+      .catch(err => console.log(err));
+    })
+  </script> -->
+</body>
+</html>

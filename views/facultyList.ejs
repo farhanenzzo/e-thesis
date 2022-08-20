@@ -1,0 +1,41 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  <%- include("./partials/nav.ejs") %>
+
+  <div class="text-center">
+    <h2 style="font-family: 'Ubuntu Mono', monospace;">- Faculty List -</h2>
+
+    <% if (faculties.length > 0) { %>
+        <table class="table table-sm table-success table-striped table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Initial</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">G-suite</th>
+                <th scope="col"> Action</th>
+              </tr>
+            </thead>
+            <tbody>
+   
+        <% faculties.forEach(faculty => { %>
+            <tr>
+                <td><%= faculty.initial_name %></td>
+                <td><%= faculty.full_name %></td>
+                <td><%= faculty.email %></td>
+                <td><a href="/facultyDetails/<%= faculty.initial_name %>">Details</a></td>
+            </tr>
+      <% }) %>
+        </tbody>
+        </table>
+
+    <% } else { %>
+      <p>There are no Faculty List to display...</p>
+    <% } %>
+    
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
+</body>
+</html>

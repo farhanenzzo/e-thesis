@@ -3,24 +3,83 @@
 
 <body>
   <%- include("./partials/nav.ejs") %>
-  <div class="blogs content">
-    <h2>login page</h2>
 
-    <div class="create-blog content">
-      <form>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+   
+      </div>
 
-        <label for="g-suite">G-suite</label>
-        <input type="email" id="title" name="title" required>
+      <div class="col-6 ">
 
-        <label for="Password">Password</label>
-        <input type="password" id="title" name="title" required>
+        <h2 style="font-family: 'Ubuntu Mono', monospace;"> - Login as -</h2>
+        
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          <label style="font-family: 'Ubuntu Mono', monospace;" class="form-check-label" for="flexSwitchCheckDefault">Faculty</label>
+        </div>
+        <div style="margin-bottom: 15px;" class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+          <label style="font-family: 'Ubuntu Mono', monospace;" class="form-check-label" for="flexSwitchCheckDefault">Student</label>
+        </div>
 
-        <button>Submit</button>
+        <form>
+          <!-- Email input -->
+          <div class="d-grid gap-3">
+  
+            <div >
+              <input class="form-control form-control-sm" type="email" placeholder="G-suite" aria-label=".form-control-sm example" name="id" required>
+            </div>
+            
+            <div >
+              <input class="form-control form-control-sm" type="password" placeholder="Password" aria-label=".form-control-sm example" name="department" required>
+            
+            </div>
 
-      </form>
+            <div>
 
+            </div>
+  
+          </div>
+          
+          <!-- 2 column grid layout for inline styling -->
+          <div class="row mb-4">
+            <div class="col d-flex justify-content-center">
+              <!-- Checkbox -->
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                <label style="font-family: 'Ubuntu Mono', monospace;" class="form-check-label" for="form2Example31"> Remember me </label>
+              </div>
+            </div>
+        
+            <div class="col">
+              <!-- Simple link -->
+              <a style="font-family: 'Ubuntu Mono', monospace;" href="#!">Forgot password?</a>
+            </div>
+          </div>
+        
+          <!-- Submit button -->
 
+          <div class="d-grid gap-4">
+              
+            <a href="#" class="btn btn-outline-success btn-sm">submit</a>
+            <div class="text-center">
+              <p style="font-family: 'Ubuntu Mono', monospace;" >Not a member? <a style="font-family: 'Ubuntu Mono', monospace;" href="#!">Register</a></p>
+            </div>
+          </div>
+        
+          <!-- Register buttons -->
+         
+        </form>
+
+      </div>
+      <div class="col">
+       
+      </div>
+    </div>
+    
   </div>
+  
 
   <%- include("./partials/footer.ejs") %>
 </body>

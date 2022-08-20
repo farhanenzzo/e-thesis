@@ -1,57 +1,48 @@
 const express = require('express');
-
-// express app
 const app = express();
 
-// listen for requests
+const studentRoutes = require('./routes/studentRoutes');
+const facultyRoutes = require('./routes/facultyRoutes');
 
 app.listen(process.env.PORT || 5000);
 
-// register view engine
+app.use(express.urlencoded({extended: true}));
+
 app.set('view engine', 'ejs');
-// app.set('views', 'myviews');
+
+const mysql = require('mysql'); 
+const db = mysql.createConnection({
+
+    host:"localhost",
+    user:'root',
+    password: "",
+    database: "ethesis"
+});
+
 
 app.get('/', (req, res) => {
-  const blogs = [
-   
-  ];
+
+  const blogs = [];
   res.render('index', { title: 'Home', blogs });
 });
 
-app.get('/about', (req, res) => {
-  res.render('about', { title: 'About' });
+app.get('/register', (req, res) => {
+  res.render('register', { title: 'register' });
 });
 
-app.get('/blogs/create', (req, res) => {
-  res.render('create', { title: 'Create a new blog' });
-});
 
 app.get('/login', (req, res) => {
   res.render('login', { title: 'Login' });
 });
 
-app.get('/student-profile', (req, res) => {
-  res.render('student-profile', { title: 'student-profile' });
-});
-
-app.get('/faculty-profile', (req, res) => {
-  res.render('faculty-profile', { title: 'faculty-profile' });
-});
-
-app.get('/register-student', (req, res) => {
-  res.render('register-student', { title: 'register-student' });
-});
-
-
-app.get('/register-faculty', (req, res) => {
-  res.render('register-faculty', { title: 'register-faculty' });
-});
 
 app.get('/thesis-group', (req, res) => {
   res.render('thesis-group', { title: 'thesis-group' });
 });
 
 
+app.use(studentRoutes);
+app.use(facultyRoutes);
 
 
 // 404 page

@@ -3,49 +3,72 @@
 
 <body>
   <%- include("./partials/nav.ejs") %>
-  <div class="blogs content">
-    <h2>create student profile</h2>
-
-    <div class="create-blog content">
-      <form action="" method="POST">
-
-        <label for="id">ID</label>
-        <input type="text" id="title" name="title" required>
-
-        <label for="name">Name</label>
-        <input type="text" id="title" name="title" required>
-
-        <label for="department">Department</label>
-        <input type="text" id="title" name="title" required>
-
-        <label for="program">Program</label>
-        <input type="text" id="title" name="title" required>
-
-        <label for="g-suite">G-suite</label>
-        <input type="email" id="title" name="title" required>
-
-        <label for="a-credit">Attempted Credit</label>
-        <input type="number" id="title" name="title" required>
-
-        <label for="e-credit">Earned Credit</label>
-        <input type="number" id="title" name="title" required>
-
-        <label for="a-semester">Attempted semester</label>
-        <input type="number" id="title" name="title" required>
-
-        <label for="cgpa">Current CGPA</label>
-        <input type="number" id="title" name="title" required>
-
-        <label for="body">Bio</label>
-        <textarea id="body" name="body" required></textarea>
-
-        <button>Submit</button>
-
-      </form>
-    </div>
   
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        
+      </div>
+      <div class="col-6">
 
+        <h2 style="font-family: 'Ubuntu Mono', monospace;"> - update student profile - </create></h2>
+       
+        <form action="/student-profile" method="POST">
 
+          <div class="d-grid gap-3">
+  
+            <div >
+              <input class="form-control form-control-sm" type="text" placeholder="ID" aria-label=".form-control-sm example" name="id" required>
+            </div>
+            
+            <div>
+              <input class="form-control form-control-sm" type="text" placeholder="Name" aria-label=".form-control-sm example" name="name" required>
+  
+            </div>
+  
+            <div >
+              <input class="form-control form-control-sm" type="text" placeholder="Department" aria-label=".form-control-sm example" name="department" required>
+            
+            </div>
+  
+            <div >
+              <input class="form-control form-control-sm" type="email" placeholder="G-suite" aria-label=".form-control-sm example" name="email" required>
+  
+            </div>
+  
+            <div >
+              <input class="form-control form-control-sm" type="number" placeholder="Attempted Credit" aria-label=".form-control-sm example" name="a_credit" required>
+  
+            </div>
+  
+            <div >
+              <input class="form-control form-control-sm" type="number" placeholder="Earned Credit" aria-label=".form-control-sm example" name="e_credit" required>
+  
+            </div>
+  
+            <div >
+              <input class="form-control form-control-sm" type="number" placeholder="Attempted semester" aria-label=".form-control-sm example" name="a_semester" required>
+  
+            </div>
+  
+            <div >        
+              <input class="form-control form-control-sm" type="float" placeholder="Current CGPA" aria-label=".form-control-sm example" name="cgpa" required>
+            </div>
+  
+            <div >
+              <button class="btn btn-outline-success btn-sm" style =width:550px>Submit</button>
+  
+            </div>
+  
+          </div>
+
+        </form>
+        
+      </div>
+      <div class="col">
+       
+      </div>
+    </div>
   </div>
 
   <%- include("./partials/footer.ejs") %>
