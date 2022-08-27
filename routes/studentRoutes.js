@@ -12,7 +12,7 @@ const db = mysql.createConnection({
 });
 
 router.get('/student-profile', (req, res) => {
-    res.render('student-profile', { title: 'student-profile' });
+    res.render('student-profile', { title: 'student-profile', email: req.session.userid});
 });
 
 
@@ -48,7 +48,7 @@ router.get('/studentDetails/:id', (req, res) => {
     db.query(query, [id], (err, rows) => {
         if(err) throw err;
 
-        res.render('studentDetails', {student: rows[0], title: 'studentDetails'});
+        res.render('studentDetails', {student: rows[0], title: 'studentDetails' ,type:req.session.type});
     });
 });
 
@@ -69,6 +69,39 @@ router.get('/updateStudent/:id', (req, res) =>{
   
 });
   
+
+
+router.get('/profile', (req, res) =>{
+
+    const email = req.session.userid;
+    const type = req.session.type;
+
+    var query;
+
+    if(type === 'student') {
+        query = 'select id from student where gsuite = ?';
+    } else {
+        query = 'select initial_name from faculty where email = ?';
+    }
+
+  
+    db.query(query, [req.session.userid], (err, rows) => {
+      if(err) throw err;
+      console.log(rows);
+  
+      if(type === 'student') {
+
+          var id = rows[0].id;
+
+          res.redirect('/studentDetails/' + id); /// studentDetails/8989898 
+      } else {
+        var id = rows[0].initial_name;
+        res.redirect('/facultyDetails/' + id);
+      }
+    });
+  
+});
+
 router.post('/updateStudent/:id', (req, res) =>{
 
     const id = req.params.id;
@@ -89,7 +122,7 @@ router.post('/updateStudent/:id', (req, res) =>{
   
     });
 
-    res.redirect('/studentList');
+    res.redirect('/index');
   
 });
 

@@ -42,10 +42,19 @@ db.connect((err) => {
   }
 })
 
+
 app.get('/', (req, res) => {
+
+  res.render('login', {type: req.session.type, title: 'Login' });
+});
+
+app.get('/index', (req, res) => {
 
   res.render('index', {type: req.session.type, title: 'Home' });
 });
+
+
+
 
 
 app.get('/faculty-notify', (req, res) => {
@@ -62,6 +71,7 @@ app.use(studentRoutes);
 app.use(facultyRoutes);
 app.use(authRoutes);
 app.use(group);
+
 
 
 // 404 page

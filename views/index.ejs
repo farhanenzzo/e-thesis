@@ -27,10 +27,12 @@
 
     <% if (type == 'student') { %>
 
+      <h4 style="color:  #2e86c1 ; text-align: center; font-family: 'Ubuntu Mono', monospace;">Welcome to Student Profile ! </h4> &nbsp; 
+
       <div class="accordion-item">
         <h2 class="accordion-header" id="flush-headingOne">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-            Update Student profile 
+            Update profile 
           </button>
         </h2>
         <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
@@ -84,7 +86,7 @@
         </div>
       </div>
 
-      <div class="accordion-item">
+      <!-- <div class="accordion-item">
         <h2 class="accordion-header" id="flush-heading8">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse8" aria-expanded="false" aria-controls="flush-collapse8">
             Notifications
@@ -96,13 +98,15 @@
               <button type="button" class="btn btn-link"> (Tap Here)</button></a>
           </div>
         </div>
-      </div>
+      </div> -->
       
     <% } else { %>
+
+      <h4 style="color:  #2e86c1 ; text-align: center; font-family: 'Ubuntu Mono', monospace;">Welcome to Faculty Profile ! </h4> &nbsp; 
       <div class="accordion-item">
         <h2 class="accordion-header" id="flush-headingTwo">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-            Update Faculty profile 
+            Update profile 
           </button>
         </h2>
         <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
@@ -151,7 +155,7 @@
         </h2>
         <div id="flush-collapse7" class="accordion-collapse collapse" aria-labelledby="flush-heading7" data-bs-parent="#accordionFlushExample">
           <div class="accordion-body"> 
-            <a href="">
+            <a href="/facutly/notify">
               <button type="button" class="btn btn-link"> (Tap Here)</button></a>
           </div>
         </div>

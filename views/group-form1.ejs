@@ -18,24 +18,27 @@
           <div class="d-grid gap-3">
   
             <div>
-              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="topic">
+              <!-- <label for="">- Your Thesis interest for ? - </label> -->
+            
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="topic" required>
                 <option selected>- Your Thesis interest for ? - </option>
 
-                <option value="AI">AI</option>
-                <option value="ML"> ML</option>
-                <option value="NLP">NLP</option>
-                <option value="Blockchain">Blockchain</option>
-                <option value="Deep Learning">Deep Learning</option>
-                <option value="Big Data">Big Data</option>
-                <option value="Cloud Computing">Cloud Computing</option>
-                <option value="Neural Network">Neural Network</option>
-                <option value="Data Science">Data Science</option>
+                <% if (topics.length > 0) { %>
+                
+                  <% topics.forEach(topic => { %>
+  
+                    <option value="<%= topic.research_interest %>"> <%= topic.research_interest %> </option>
+                     
+                <% }) %>
+                 
+          
+              <% } %>
     
               </select>
             </div>
 
             <div>
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="slot">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="slot" required>
                 <option selected>- Available Slots in ? - </option>
 
                 <option value="Spring">Spring</option>

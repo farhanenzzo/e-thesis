@@ -1,25 +1,43 @@
 <html lang="en">
 <%- include("./partials/head.ejs") %>
 
-
 <body>
   <%- include("./partials/nav.ejs") %>
 
+  <div class="text-center">
+    <h2 style="font-family: 'Ubuntu Mono', monospace;">- Groups Request List -</h2>
 
-  <div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
-    <div class="toast-header">
-      <img src="..." class="rounded mr-2" alt="...">
-      <strong class="mr-auto">Bootstrap</strong>
-      <small>11 mins ago</small>
-      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="toast-body">
-      Hello, world! This is a toast message.
-    </div>
+    <% if (notifications.length > 0) { %>
+        <table class="table table-sm table-success table-striped table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Group ID</th>
+                <th scope="col">Student Name</th>
+          
+              </tr>
+            </thead>
+            <tbody>
+   
+        <% notifications.forEach(notif => { %>
+            <tr>
+              <td><%= notif.id %></td>
+              <td>
+                <a href="/studentDetails/<%= notif.s1 %>"><%= notif.s1 %></a> &nbsp; &nbsp;
+                <a href="/studentDetails/<%= notif.s2 %>"><%= notif.s2 %></a> &nbsp; &nbsp;
+                <a href="/studentDetails/<%= notif.s3 %>"><%= notif.s3 %></a> &nbsp; &nbsp;
+                <a href="/studentDetails/<%= notif.s4 %>"><%= notif.s4 %></a> &nbsp; &nbsp;
+                <a href="/studentDetails/<%= notif.s5 %>"><%= notif.s5 %></a> &nbsp; &nbsp;
+              </td>
+            </tr>
+      <% }) %>
+        </tbody>
+        </table>
+
+    <% } else { %>
+      <p>There are no groups to display...</p>
+    <% } %>
+    
   </div>
-
 
   <%- include("./partials/footer.ejs") %>
 </body>

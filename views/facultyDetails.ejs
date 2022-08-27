@@ -35,9 +35,12 @@
 
 
             <div class="d-grid gap-4">
-                
-              <a href="/updateFaculty/<%=faculty.initial_name %>" class="btn btn-outline-success btn-sm">Edit</a>
+              <% if (type == 'faculty') { %>
+                <a href="/updateFaculty/<%=faculty.initial_name %>" class="btn btn-outline-success btn-sm">Edit</a>
 
+              <% } %>
+                
+              
             </div>
             
           </p>

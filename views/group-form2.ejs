@@ -13,38 +13,38 @@
 
         <h2 style="font-family: 'Ubuntu Mono', monospace;"> - Form your thesis group - </create></h2>
        
-        <form action="" method="GET">
+        <form action="/group-form2" method="POST">
 
           <div class="d-grid gap-3">
 
             <div >
-              <input class="form-control form-control-sm" type="text" placeholder="Student Id (1)" aria-label=".form-control-sm example" name="Student Id (1)" >
+              <input class="form-control form-control-sm" type="text" placeholder="Student Id (1)" aria-label=".form-control-sm example" name="s1" >
             </div>
             
             <div>
-              <input class="form-control form-control-sm" type="text" placeholder="Student Id (2)" aria-label=".form-control-sm example" name="Student Id (2)" >
+              <input class="form-control form-control-sm" type="text" placeholder="Student Id (2)" aria-label=".form-control-sm example" name="s2" >
   
             </div>
   
             <div >
-              <input class="form-control form-control-sm" type="text" placeholder="Student Id (3)" aria-label=".form-control-sm example" name="Student Id (3)" >
+              <input class="form-control form-control-sm" type="text" placeholder="Student Id (3)" aria-label=".form-control-sm example" name="s3" >
             
             </div>
 
             <div >
-              <input class="form-control form-control-sm" type="text" placeholder="Student Id (4)" aria-label=".form-control-sm example" name="Student Id (4)">
+              <input class="form-control form-control-sm" type="text" placeholder="Student Id (4)" aria-label=".form-control-sm example" name="s4">
             
             </div>
 
             <div >
-              <input class="form-control form-control-sm" type="text" placeholder="Student Id (5)" aria-label=".form-control-sm example" name="Student Id (5)">
+              <input class="form-control form-control-sm" type="text" placeholder="Student Id (5)" aria-label=".form-control-sm example" name="s5">
             
             </div>
 
 
 
             <div>
-              <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="faculty_initial">
               <option selected>- Search Available Supervisor- </option>
 
               <% if (faculty.length > 0) { %>
@@ -68,7 +68,7 @@
            -->
               <div class="form-group">
                 <label for="exampleFormControlTextarea1">Request Note</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="request_note"></textarea>
               </div>
       
             <div >
