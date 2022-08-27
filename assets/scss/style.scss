@@ -1,0 +1,84 @@
+/* =======================================================================
+Template Name: Youtubers
+Author:  SmartEye Technologies
+Author URI: www.smarteyeapps.com
+Version: 1.0
+coder name:Prabin Raja
+Description: This Template is created for Youtubers
+======================================================================= */
+
+/* ===================================== Import Variables ================================== */
+@import 'variable';
+/* ===================================== Basic CSS ==================================== */
+@import 'base/basic_setup';
+
+/* =================== Header Style Starts Here =================== */
+
+body{
+    background-color: #f5f5fc;
+    background-image: url(../images/login-bg.jpg) !important;
+}
+
+.login-container{
+    @include shado-1();
+    background-color: #FFF;
+    margin-top: 7%;
+}
+
+.img-box{
+   padding: 50px 90px;
+    @media screen and (max-width: 767px){
+        padding-top: 0px;
+    }  
+    margin: auto;
+}
+.login-box{
+     border-right: 1px solid #ececec;
+    padding: 50px;
+    h5{
+        text-align: center;
+        margin-bottom:20px;
+    }
+    label{
+        padding:5px;
+        font-size: .9rem;
+        font-weight: 600;
+        margin-bottom: -15px;
+        z-index: 99;
+        background-color: #FFF;
+        width: auto;
+        margin-left: 13px;
+
+    }
+    input{
+        border-radius: 0px;
+        padding-top: 13px;
+        padding-bottom: 5px;
+        background-color:#FFF; 
+        font-weight: 600;
+    }
+    p{
+        margin-bottom: 10px;
+        font-size: .9rem;
+        .vgh{
+            float: right;
+            margin-top: -32px;
+            color: #3751fe;
+            font-weight: 600;
+            
+        }
+    }
+    .login-row{
+        .btn{
+            font-weight: 600;
+        }
+        .btn-primary{
+            margin-bottom: 20px;
+        }
+    }
+    .donroo{
+        margin-top: 15px;
+        font-size: .9rem;
+        text-align: center;
+    }
+}

@@ -13,9 +13,8 @@
 
             <h2 style="font-family: 'Ubuntu Mono', monospace;"> - edit student profile - </create></h2>
 
-            <% if (action == 'edit') { %>
 
-                <form action="/studentList/updateStudent/<%= student.id %>" method="POST">
+                <form action="/updateStudent/<%= student.id %>" method="POST">
 
                     <div class="d-grid gap-3">
             
@@ -66,10 +65,7 @@
         
                 </form>
             
-                <% } else { %>
-                <p>There are no student info to display...</p>
-            <% } %>
-            
+     
         </div>
       <div class="col">
        

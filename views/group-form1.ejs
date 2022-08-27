@@ -1,0 +1,71 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+  <%- include("./partials/nav.ejs") %>
+
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        
+      </div>
+      <div class="col-6">
+
+        <h2 style="font-family: 'Ubuntu Mono', monospace;"> - Form your thesis group - </create></h2>
+       
+        <form action="/group-form1" method="POST">
+
+          <div class="d-grid gap-3">
+  
+            <div>
+              <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="topic">
+                <option selected>- Your Thesis interest for ? - </option>
+
+                <option value="AI">AI</option>
+                <option value="ML"> ML</option>
+                <option value="NLP">NLP</option>
+                <option value="Blockchain">Blockchain</option>
+                <option value="Deep Learning">Deep Learning</option>
+                <option value="Big Data">Big Data</option>
+                <option value="Cloud Computing">Cloud Computing</option>
+                <option value="Neural Network">Neural Network</option>
+                <option value="Data Science">Data Science</option>
+    
+              </select>
+            </div>
+
+            <div>
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="slot">
+                <option selected>- Available Slots in ? - </option>
+
+                <option value="Spring">Spring</option>
+                <option value="summer">summer</option>
+                <option value="Fall">Fall</option>
+      
+                </select>
+            </div>
+      
+            <div >
+                
+                <button class="btn btn-outline-success btn-sm" style =width:550px>Next</button>
+             
+             
+  
+            </div>
+  
+          </div>
+
+        </form>
+
+      </div>
+      <div class="col">
+       
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+  <%- include("./partials/footer.ejs") %>
+</body>
+</html>

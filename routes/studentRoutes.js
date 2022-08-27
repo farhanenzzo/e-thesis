@@ -69,34 +69,27 @@ router.get('/updateStudent/:id', (req, res) =>{
   
 });
   
-router.post('/updateStudent/:id', (req, res, next) =>{
+router.post('/updateStudent/:id', (req, res) =>{
 
     const id = req.params.id;
   
-    const s_id = req.body.id;
-    const name = req.body.name;
-    const department = req.body.department;
-    const gsuite = req.body.gsuite;
-    const attempted_credit = req.body.attempted_credit;
-    const earned_credit = req.body.earned_credit;
-    const completed_semester = req.body.completed_semester;
-    const current_cgpa = req.body.current_cgpa;
+    // const s_id = req.body.id;
+    // const name = req.body.name;
+    // const department = req.body.department;
+    // const gsuite = req.body.gsuite;
+    // const attempted_credit = req.body.attempted_credit;
+    // const earned_credit = req.body.earned_credit;
+    // const completed_semester = req.body.completed_semester;
+    // const current_cgpa = req.body.current_cgpa;
   
-    const query = `update student set
-    s_id = '${s_id}', 
-    name = '${name}',
-    department = '${department}',
-    gsuite = '${gsuite}',
-    attempted_credit = '${attempted_credit}',
-    earned_credit = '${earned_credit}',
-    completed_semester = '${completed_semester}',
-    current_cgpa = '${current_cgpa}',`;
+    const query = `update student set name = ?, department = ?, gsuite = ?, attempted_credit = ?, earned_credit = ?, completed_semester = ?, current_cgpa = ? where id = ?`;
   
-    db.query(query, (err, rows) => {
+    db.query(query, [req.body.name, req.body.department, req.body.email, req.body.a_credit, req.body.e_credit, req.body.a_credit, req.body.cgpa, id], (err, rows) => {
       if(err) throw err;
   
-      res.redirect('/studentList');
     });
+
+    res.redirect('/studentList');
   
 });
 

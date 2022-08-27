@@ -65,10 +65,19 @@ router.get('/updatefaculty/:initial_name', (req, res) =>{
     });
   
 });
+
+router.post('/updatefaculty/:initial_name', (req, res) =>{
+    const initial_name = req.params.initial_name;
+
+    const query = `update faculty SET full_name = ?, email = ? , room_number = ?, bio = ?, research_interest = ?, role = ?,  available_status = ?, type = ?  where initial_name = ?`;
   
+    db.query(query, [req.body.full_name, req.body.email, req.body.room_number,  req.body.bio, req.body.research_interest, req.body.role,  req.body.available_status, req.body.type, initial_name], (err, rows) => {
+      if(err) throw err;
 
-
-
-
+    });
+    res.redirect("/facultyList");
+  
+});
+  
 
 module.exports = router;

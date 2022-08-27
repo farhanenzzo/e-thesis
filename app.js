@@ -1,14 +1,28 @@
 const express = require('express');
 const app = express();
+const cookie = require('cookie-parser');
+const dotenv = require('dotenv');
+// dotenv.config({path: './.env'});
+const session=require('express-session');
+
+app.set('view engine', 'ejs');
+app.listen(process.env.PORT || 5000);
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+app.use(cookie());
+
+const oneDay = 1000 * 60 * 60 * 24;
+app.use(session({
+    secret: "thisismysecrctekey",
+    saveUninitialized:true,
+    cookie: { maxAge: oneDay },
+    resave: false 
+}));
 
 const studentRoutes = require('./routes/studentRoutes');
 const facultyRoutes = require('./routes/facultyRoutes');
-
-app.listen(process.env.PORT || 5000);
-
-app.use(express.urlencoded({extended: true}));
-
-app.set('view engine', 'ejs');
+const authRoutes = require('./routes/auth');
+const group = require('./routes/groupRoutes');
 
 const mysql = require('mysql'); 
 const db = mysql.createConnection({
@@ -19,29 +33,35 @@ const db = mysql.createConnection({
     database: "ethesis"
 });
 
+db.connect((err) => {
+  if(err){
+    console.log(err)
+  }else{
+    console.log("MYsqL Connected..")
+
+  }
+})
 
 app.get('/', (req, res) => {
 
-  res.render('index', { title: 'Home' });
-});
-
-app.get('/register', (req, res) => {
-  res.render('register', { title: 'register' });
+  res.render('index', {type: req.session.type, title: 'Home' });
 });
 
 
-app.get('/login', (req, res) => {
-  res.render('login', { title: 'Login' });
+app.get('/faculty-notify', (req, res) => {
+
+  res.render('faculty-notify', {title: 'faculty-notify' });
 });
 
+app.use('/assets', express.static('assets'));
 
-app.get('/thesis-group', (req, res) => {
-  res.render('thesis-group', { title: 'thesis-group' });
-});
+
 
 
 app.use(studentRoutes);
 app.use(facultyRoutes);
+app.use(authRoutes);
+app.use(group);
 
 
 // 404 page
